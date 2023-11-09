@@ -32,14 +32,16 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.RequestsDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeaderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditStatus = new System.Windows.Forms.Button();
+            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeaderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShowButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RequestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,42 +86,14 @@
             this.idDocrors,
             this.HeaderColumn,
             this.ContentColumn,
-            this.User});
+            this.User,
+            this.StatusRequest});
             this.RequestsDataGridView.Location = new System.Drawing.Point(12, 83);
             this.RequestsDataGridView.Name = "RequestsDataGridView";
             this.RequestsDataGridView.RowHeadersWidth = 51;
             this.RequestsDataGridView.RowTemplate.Height = 24;
             this.RequestsDataGridView.Size = new System.Drawing.Size(911, 353);
             this.RequestsDataGridView.TabIndex = 14;
-            // 
-            // idDocrors
-            // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            this.idDocrors.Width = 125;
-            // 
-            // HeaderColumn
-            // 
-            this.HeaderColumn.HeaderText = "Заголовок";
-            this.HeaderColumn.MinimumWidth = 6;
-            this.HeaderColumn.Name = "HeaderColumn";
-            this.HeaderColumn.Width = 125;
-            // 
-            // ContentColumn
-            // 
-            this.ContentColumn.HeaderText = "Текст";
-            this.ContentColumn.MinimumWidth = 6;
-            this.ContentColumn.Name = "ContentColumn";
-            this.ContentColumn.Width = 125;
-            // 
-            // User
-            // 
-            this.User.HeaderText = "Пользователь";
-            this.User.MinimumWidth = 6;
-            this.User.Name = "User";
-            this.User.Width = 125;
             // 
             // SearchTextBox
             // 
@@ -154,18 +128,67 @@
             // EditStatus
             // 
             this.EditStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditStatus.Location = new System.Drawing.Point(145, 478);
+            this.EditStatus.Location = new System.Drawing.Point(299, 478);
             this.EditStatus.Name = "EditStatus";
             this.EditStatus.Size = new System.Drawing.Size(162, 36);
             this.EditStatus.TabIndex = 20;
             this.EditStatus.Text = "Изменить статус";
             this.EditStatus.UseVisualStyleBackColor = true;
+            this.EditStatus.Click += new System.EventHandler(this.EditStatus_Click);
+            // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            this.idDocrors.Width = 125;
+            // 
+            // HeaderColumn
+            // 
+            this.HeaderColumn.HeaderText = "Заголовок";
+            this.HeaderColumn.MinimumWidth = 6;
+            this.HeaderColumn.Name = "HeaderColumn";
+            this.HeaderColumn.Width = 125;
+            // 
+            // ContentColumn
+            // 
+            this.ContentColumn.HeaderText = "Текст";
+            this.ContentColumn.MinimumWidth = 6;
+            this.ContentColumn.Name = "ContentColumn";
+            this.ContentColumn.Width = 125;
+            // 
+            // User
+            // 
+            this.User.HeaderText = "Пользователь";
+            this.User.MinimumWidth = 6;
+            this.User.Name = "User";
+            this.User.Width = 125;
+            // 
+            // StatusRequest
+            // 
+            this.StatusRequest.HeaderText = "Статус";
+            this.StatusRequest.MinimumWidth = 6;
+            this.StatusRequest.Name = "StatusRequest";
+            this.StatusRequest.Width = 125;
+            // 
+            // ShowButton
+            // 
+            this.ShowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ShowButton.Location = new System.Drawing.Point(156, 478);
+            this.ShowButton.Name = "ShowButton";
+            this.ShowButton.Size = new System.Drawing.Size(114, 36);
+            this.ShowButton.TabIndex = 21;
+            this.ShowButton.Text = "Посмотреть";
+            this.ShowButton.UseVisualStyleBackColor = true;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
             // AllRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 535);
+            this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.EditStatus);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchButton);
@@ -178,6 +201,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заявки";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AllRequests_FormClosed);
             this.Load += new System.EventHandler(this.AllRequests_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RequestsDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -191,13 +215,15 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.DataGridView RequestsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDocrors;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeaderColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContentColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn User;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDocrors;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeaderColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusRequest;
+        private System.Windows.Forms.Button ShowButton;
     }
 }

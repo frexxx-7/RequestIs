@@ -51,5 +51,11 @@ namespace RequestIs.Forms
             new AllRequests().Show();
             this.Hide();
         }
+
+        private void StoryButton_Click(object sender, EventArgs e)
+        {
+            new ShowHistory().Show();
+            this.Hide();
+        }
     }
 }

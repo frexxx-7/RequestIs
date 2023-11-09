@@ -39,6 +39,7 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.ShowButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RequestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,11 +153,23 @@
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // ShowButton
+            // 
+            this.ShowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ShowButton.Location = new System.Drawing.Point(326, 463);
+            this.ShowButton.Name = "ShowButton";
+            this.ShowButton.Size = new System.Drawing.Size(114, 36);
+            this.ShowButton.TabIndex = 22;
+            this.ShowButton.Text = "Посмотреть";
+            this.ShowButton.UseVisualStyleBackColor = true;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
+            // 
             // MyRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 511);
+            this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.SearchTextBox);
@@ -189,5 +202,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button ShowButton;
     }
 }

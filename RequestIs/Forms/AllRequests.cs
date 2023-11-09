@@ -114,5 +114,21 @@ namespace RequestIs.Forms
             }
             db.closeConnection();
         }
+
+        private void EditStatus_Click(object sender, EventArgs e)
+        {
+            new EditStatusRequest(RequestsDataGridView[0, RequestsDataGridView.SelectedCells[0].RowIndex].Value.ToString()).Show();
+        }
+
+        private void AllRequests_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            new ShowRequest(RequestsDataGridView[0, RequestsDataGridView.SelectedCells[0].RowIndex].Value.ToString(), this).Show();
+            this.Hide();
+        }
     }
 }

@@ -129,5 +129,11 @@ namespace RequestIs.Forms
             db.closeConnection();
             loadInfoRequests();
         }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            new ShowRequest(RequestsDataGridView[0, RequestsDataGridView.SelectedCells[0].RowIndex].Value.ToString(), this).Show();
+            this.Hide();
+        }
     }
 }

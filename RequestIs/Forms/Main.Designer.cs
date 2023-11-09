@@ -34,9 +34,9 @@
             this.SubmitRequestButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.StoryButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.StoryButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,16 @@
             this.panel1.Size = new System.Drawing.Size(675, 233);
             this.panel1.TabIndex = 7;
             // 
+            // StoryButton
+            // 
+            this.StoryButton.Location = new System.Drawing.Point(260, 95);
+            this.StoryButton.Name = "StoryButton";
+            this.StoryButton.Size = new System.Drawing.Size(147, 36);
+            this.StoryButton.TabIndex = 6;
+            this.StoryButton.Text = "История";
+            this.StoryButton.UseVisualStyleBackColor = true;
+            this.StoryButton.Click += new System.EventHandler(this.StoryButton_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -123,15 +133,6 @@
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // StoryButton
-            // 
-            this.StoryButton.Location = new System.Drawing.Point(260, 95);
-            this.StoryButton.Name = "StoryButton";
-            this.StoryButton.Size = new System.Drawing.Size(147, 36);
-            this.StoryButton.TabIndex = 6;
-            this.StoryButton.Text = "История";
-            this.StoryButton.UseVisualStyleBackColor = true;
             // 
             // Main
             // 

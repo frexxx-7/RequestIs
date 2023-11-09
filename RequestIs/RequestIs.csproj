@@ -59,6 +59,12 @@
     <Compile Include="Forms\AddPosition.Designer.cs">
       <DependentUpon>AddPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddStatusRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddStatusRequest.Designer.cs">
+      <DependentUpon>AddStatusRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="Forms\Autorization.Designer.cs">
       <DependentUpon>Autorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditStatusRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditStatusRequest.Designer.cs">
+      <DependentUpon>EditStatusRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
@@ -95,6 +107,18 @@
     <Compile Include="Forms\Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ShowHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowHistory.Designer.cs">
+      <DependentUpon>ShowHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowRequest.Designer.cs">
+      <DependentUpon>ShowRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SubmitRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +136,9 @@
     <EmbeddedResource Include="Forms\AddPosition.resx">
       <DependentUpon>AddPosition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddStatusRequest.resx">
+      <DependentUpon>AddStatusRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +148,9 @@
     <EmbeddedResource Include="Forms\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditStatusRequest.resx">
+      <DependentUpon>EditStatusRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +159,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowHistory.resx">
+      <DependentUpon>ShowHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowRequest.resx">
+      <DependentUpon>ShowRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubmitRequest.resx">
       <DependentUpon>SubmitRequest.cs</DependentUpon>
