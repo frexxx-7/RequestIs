@@ -24,7 +24,10 @@ namespace RequestIs.Forms
 
             RequestsDataGridView.Rows.Clear();
 
-            string query = $"select * from requests";
+            string query = $"select requests.id, requests.header, requests.content, users.login, statusrequest.name from history " +
+                $"join statusrequest on statusrequest.id = history.idStatusRequest " +
+                $"join requests on requests.id = history.idRequest " +
+                $"join users on requests.idUser = users.id";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(query, db.getConnection()))
@@ -91,7 +94,11 @@ namespace RequestIs.Forms
 
             RequestsDataGridView.Rows.Clear();
 
-            string searchString = $"select * from requests where concat (header, content)  like '%{SearchTextBox.Text}%'";
+            string searchString = $"select requests.id, requests.header, requests.content, users.login, statusrequest.name from history " +
+                $"join statusrequest on statusrequest.id = history.idStatusRequest " +
+                $"join requests on requests.id = history.idRequest " +
+                $"join users on requests.idUser = users.id " +
+                $"where concat (requests.header, requests.content, users.login, statusrequest.name)  like '%{SearchTextBox.Text}%'";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(searchString, db.getConnection()))

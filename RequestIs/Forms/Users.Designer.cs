@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BackButton = new System.Windows.Forms.Button();
             this.UsersDataGridView = new System.Windows.Forms.DataGridView();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,18 +59,34 @@
             // 
             // UsersDataGridView
             // 
+            this.UsersDataGridView.AllowUserToAddRows = false;
+            this.UsersDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsersDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.UsersDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.UsersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.UsersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDocrors,
             this.LoginColumn,
             this.PasswordColumn,
             this.PositionColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsersDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.UsersDataGridView.Location = new System.Drawing.Point(12, 75);
             this.UsersDataGridView.Name = "UsersDataGridView";
             this.UsersDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsersDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.UsersDataGridView.RowTemplate.Height = 24;
             this.UsersDataGridView.Size = new System.Drawing.Size(911, 353);
             this.UsersDataGridView.TabIndex = 5;
@@ -78,28 +97,24 @@
             this.idDocrors.MinimumWidth = 6;
             this.idDocrors.Name = "idDocrors";
             this.idDocrors.Visible = false;
-            this.idDocrors.Width = 125;
             // 
             // LoginColumn
             // 
             this.LoginColumn.HeaderText = "Логин";
             this.LoginColumn.MinimumWidth = 6;
             this.LoginColumn.Name = "LoginColumn";
-            this.LoginColumn.Width = 125;
             // 
             // PasswordColumn
             // 
             this.PasswordColumn.HeaderText = "Пароль";
             this.PasswordColumn.MinimumWidth = 6;
             this.PasswordColumn.Name = "PasswordColumn";
-            this.PasswordColumn.Width = 125;
             // 
             // PositionColumn
             // 
             this.PositionColumn.HeaderText = "Должность";
             this.PositionColumn.MinimumWidth = 6;
             this.PositionColumn.Name = "PositionColumn";
-            this.PositionColumn.Width = 125;
             // 
             // DeleteButton
             // 

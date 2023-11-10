@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RequestsDataGridView = new System.Windows.Forms.DataGridView();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Header = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,18 +48,34 @@
             // 
             // RequestsDataGridView
             // 
+            this.RequestsDataGridView.AllowUserToAddRows = false;
+            this.RequestsDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RequestsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.RequestsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.RequestsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.RequestsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.RequestsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RequestsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDocrors,
             this.Header,
             this.Content,
             this.idUserColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RequestsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.RequestsDataGridView.Location = new System.Drawing.Point(24, 71);
             this.RequestsDataGridView.Name = "RequestsDataGridView";
             this.RequestsDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RequestsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.RequestsDataGridView.RowTemplate.Height = 24;
             this.RequestsDataGridView.Size = new System.Drawing.Size(826, 354);
             this.RequestsDataGridView.TabIndex = 1;
@@ -67,21 +86,18 @@
             this.idDocrors.MinimumWidth = 6;
             this.idDocrors.Name = "idDocrors";
             this.idDocrors.Visible = false;
-            this.idDocrors.Width = 125;
             // 
             // Header
             // 
             this.Header.HeaderText = "Заголовок";
             this.Header.MinimumWidth = 6;
             this.Header.Name = "Header";
-            this.Header.Width = 125;
             // 
             // Content
             // 
             this.Content.HeaderText = "Текст заявки";
             this.Content.MinimumWidth = 6;
             this.Content.Name = "Content";
-            this.Content.Width = 125;
             // 
             // idUserColumn
             // 
@@ -89,7 +105,6 @@
             this.idUserColumn.MinimumWidth = 6;
             this.idUserColumn.Name = "idUserColumn";
             this.idUserColumn.Visible = false;
-            this.idUserColumn.Width = 125;
             // 
             // BackButton
             // 

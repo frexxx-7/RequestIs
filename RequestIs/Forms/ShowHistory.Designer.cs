@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.DoctorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.BackButton = new System.Windows.Forms.Button();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeaderRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContentRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,21 +54,62 @@
             // 
             // DoctorsDataGridView
             // 
+            this.DoctorsDataGridView.AllowUserToAddRows = false;
+            this.DoctorsDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoctorsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DoctorsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DoctorsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DoctorsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DoctorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DoctorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDocrors,
             this.HeaderRequest,
             this.ContentRequest,
             this.StatusRequest});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoctorsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.DoctorsDataGridView.Location = new System.Drawing.Point(27, 76);
             this.DoctorsDataGridView.Name = "DoctorsDataGridView";
             this.DoctorsDataGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoctorsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DoctorsDataGridView.RowTemplate.Height = 24;
             this.DoctorsDataGridView.Size = new System.Drawing.Size(708, 392);
             this.DoctorsDataGridView.TabIndex = 4;
+            // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            // 
+            // HeaderRequest
+            // 
+            this.HeaderRequest.HeaderText = "Заголовок заявки";
+            this.HeaderRequest.MinimumWidth = 6;
+            this.HeaderRequest.Name = "HeaderRequest";
+            // 
+            // ContentRequest
+            // 
+            this.ContentRequest.HeaderText = "Текст заявки";
+            this.ContentRequest.MinimumWidth = 6;
+            this.ContentRequest.Name = "ContentRequest";
+            // 
+            // StatusRequest
+            // 
+            this.StatusRequest.HeaderText = "Статус";
+            this.StatusRequest.MinimumWidth = 6;
+            this.StatusRequest.Name = "StatusRequest";
             // 
             // BackButton
             // 
@@ -76,35 +120,6 @@
             this.BackButton.Text = "Назад";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
-            // idDocrors
-            // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            this.idDocrors.Width = 125;
-            // 
-            // HeaderRequest
-            // 
-            this.HeaderRequest.HeaderText = "Заголовок заявки";
-            this.HeaderRequest.MinimumWidth = 6;
-            this.HeaderRequest.Name = "HeaderRequest";
-            this.HeaderRequest.Width = 125;
-            // 
-            // ContentRequest
-            // 
-            this.ContentRequest.HeaderText = "Текст заявки";
-            this.ContentRequest.MinimumWidth = 6;
-            this.ContentRequest.Name = "ContentRequest";
-            this.ContentRequest.Width = 125;
-            // 
-            // StatusRequest
-            // 
-            this.StatusRequest.HeaderText = "Статус";
-            this.StatusRequest.MinimumWidth = 6;
-            this.StatusRequest.Name = "StatusRequest";
-            this.StatusRequest.Width = 125;
             // 
             // ShowHistory
             // 

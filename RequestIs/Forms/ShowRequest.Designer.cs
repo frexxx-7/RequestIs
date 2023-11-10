@@ -134,6 +134,7 @@
             this.EditStatus.TabIndex = 21;
             this.EditStatus.Text = "Изменить статус";
             this.EditStatus.UseVisualStyleBackColor = true;
+            this.EditStatus.Visible = false;
             this.EditStatus.Click += new System.EventHandler(this.EditStatus_Click);
             // 
             // EditButton

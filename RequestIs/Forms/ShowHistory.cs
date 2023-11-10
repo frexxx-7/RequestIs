@@ -31,7 +31,7 @@ namespace RequestIs.Forms
 
             DoctorsDataGridView.Rows.Clear();
 
-            string searchString = $"select history.id, requests.header, requests.content, statusrequest.name from history " +
+            string searchString = $"select requests.id, requests.header, requests.content, statusrequest.name from history " +
                 $"join requests on requests.id = history.idRequest " +
                 $"join statusrequest on statusrequest.id = history.idStatusRequest ";
 

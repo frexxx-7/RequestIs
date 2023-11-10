@@ -33,11 +33,11 @@
             this.UsersButton = new System.Windows.Forms.Button();
             this.SubmitRequestButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.AdminPanel = new System.Windows.Forms.Panel();
             this.StoryButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.AdminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,19 +90,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // AdminPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.AdminPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.StoryButton);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.UsersButton);
-            this.panel1.Controls.Add(this.RequestsButton);
-            this.panel1.Location = new System.Drawing.Point(12, 281);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(675, 233);
-            this.panel1.TabIndex = 7;
+            this.AdminPanel.Controls.Add(this.StoryButton);
+            this.AdminPanel.Controls.Add(this.label2);
+            this.AdminPanel.Controls.Add(this.UsersButton);
+            this.AdminPanel.Controls.Add(this.RequestsButton);
+            this.AdminPanel.Location = new System.Drawing.Point(12, 281);
+            this.AdminPanel.Name = "AdminPanel";
+            this.AdminPanel.Size = new System.Drawing.Size(675, 233);
+            this.AdminPanel.TabIndex = 7;
+            this.AdminPanel.Visible = false;
             // 
             // StoryButton
             // 
@@ -140,7 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 603);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SubmitRequestButton);
             this.Controls.Add(this.label1);
@@ -148,8 +149,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Main_Load);
+            this.AdminPanel.ResumeLayout(false);
+            this.AdminPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +164,7 @@
         private System.Windows.Forms.Button UsersButton;
         private System.Windows.Forms.Button SubmitRequestButton;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel AdminPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button StoryButton;

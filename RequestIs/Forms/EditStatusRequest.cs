@@ -22,6 +22,35 @@ namespace RequestIs.Forms
             loadInfoStatusRequest();
             this.idRequest = idRequest;
         }
+        
+        private void loadInfoStatusInRequest() {
+            DB db = new DB();
+            string queryInfo = $"select statusrequest.name as idStatus from history "+
+             $"join statusrequest on statusrequest.id = history.idStatusRequest " +
+             $"GROUP by history.idRequest ";
+
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < StatusComboBox.Items.Count; i++)
+                {
+                    if (reader["idStatus"].ToString() != "")
+                    {
+                        if (Convert.ToInt32((StatusComboBox.Items[i] as ComboBoxItem).Value) == Convert.ToInt32(reader["idStatus"]))
+                        {
+                            StatusComboBox.SelectedIndex = i;
+                        }
+                    }
+                }
+            }
+            reader.Close();
+
+            db.closeConnection();
+        }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {

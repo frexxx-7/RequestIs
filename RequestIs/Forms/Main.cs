@@ -57,5 +57,13 @@ namespace RequestIs.Forms
             new ShowHistory().Show();
             this.Hide();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if (login == "admin" || login == "Admin")
+            {
+                AdminPanel.Visible = true;
+            }
+        }
     }
 }

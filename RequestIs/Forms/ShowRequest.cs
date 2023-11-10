@@ -82,6 +82,10 @@ namespace RequestIs.Forms
         private void ShowRequest_Load(object sender, EventArgs e)
         {
             loadInfoForRequest();
+            if (Main.login == "admin" || Main.login == "Admin")
+            {
+                EditStatus.Visible = true;
+            }
         }
     }
 }
