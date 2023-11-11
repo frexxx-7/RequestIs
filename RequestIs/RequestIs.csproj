@@ -53,6 +53,12 @@
   <ItemGroup>
     <Compile Include="Classes\ComboBoxItem.cs" />
     <Compile Include="Classes\DB.cs" />
+    <Compile Include="Forms\AddAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddAddress.Designer.cs">
+      <DependentUpon>AddAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddPosition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,18 @@
     <Compile Include="Forms\MyRequests.Designer.cs">
       <DependentUpon>MyRequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PersonalInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonalInformation.Designer.cs">
+      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +151,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddAddress.resx">
+      <DependentUpon>AddAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPosition.resx">
       <DependentUpon>AddPosition.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MyRequests.resx">
       <DependentUpon>MyRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonalInformation.resx">
+      <DependentUpon>PersonalInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>

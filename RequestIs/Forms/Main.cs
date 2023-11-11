@@ -65,5 +65,17 @@ namespace RequestIs.Forms
                 AdminPanel.Visible = true;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Profile().Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new PersonalInformation().Show();
+            this.Hide();
+        }
     }
 }

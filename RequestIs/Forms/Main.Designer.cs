@@ -37,6 +37,8 @@
             this.StoryButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.ProfileButton = new System.Windows.Forms.Button();
+            this.InfoButton = new System.Windows.Forms.Button();
             this.AdminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@
             // 
             // SubmitRequestButton
             // 
-            this.SubmitRequestButton.Location = new System.Drawing.Point(272, 132);
+            this.SubmitRequestButton.Location = new System.Drawing.Point(39, 107);
             this.SubmitRequestButton.Name = "SubmitRequestButton";
             this.SubmitRequestButton.Size = new System.Drawing.Size(147, 36);
             this.SubmitRequestButton.TabIndex = 5;
@@ -82,7 +84,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(272, 220);
+            this.button1.Location = new System.Drawing.Point(272, 107);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 36);
             this.button1.TabIndex = 6;
@@ -135,11 +137,33 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ProfileButton
+            // 
+            this.ProfileButton.Location = new System.Drawing.Point(521, 107);
+            this.ProfileButton.Name = "ProfileButton";
+            this.ProfileButton.Size = new System.Drawing.Size(147, 36);
+            this.ProfileButton.TabIndex = 8;
+            this.ProfileButton.Text = "Профиль";
+            this.ProfileButton.UseVisualStyleBackColor = true;
+            this.ProfileButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // InfoButton
+            // 
+            this.InfoButton.Location = new System.Drawing.Point(246, 202);
+            this.InfoButton.Name = "InfoButton";
+            this.InfoButton.Size = new System.Drawing.Size(201, 36);
+            this.InfoButton.TabIndex = 9;
+            this.InfoButton.Text = "Информация о себе";
+            this.InfoButton.UseVisualStyleBackColor = true;
+            this.InfoButton.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 603);
+            this.Controls.Add(this.InfoButton);
+            this.Controls.Add(this.ProfileButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.AdminPanel);
             this.Controls.Add(this.button1);
@@ -168,5 +192,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button StoryButton;
+        private System.Windows.Forms.Button ProfileButton;
+        private System.Windows.Forms.Button InfoButton;
     }
 }
