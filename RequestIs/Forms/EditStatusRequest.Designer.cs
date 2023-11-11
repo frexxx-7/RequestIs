@@ -33,7 +33,7 @@
             this.StatusComboBox = new System.Windows.Forms.ComboBox();
             this.AddStatusButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CanceledButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,23 +86,23 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // CancelButton
+            // CanceledButton
             // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(506, 229);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(119, 36);
-            this.CancelButton.TabIndex = 21;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CanceledButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CanceledButton.Location = new System.Drawing.Point(506, 229);
+            this.CanceledButton.Name = "CanceledButton";
+            this.CanceledButton.Size = new System.Drawing.Size(119, 36);
+            this.CanceledButton.TabIndex = 21;
+            this.CanceledButton.Text = "Отмена";
+            this.CanceledButton.UseVisualStyleBackColor = true;
+            this.CanceledButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // EditStatusRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 277);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CanceledButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.AddStatusButton);
             this.Controls.Add(this.StatusComboBox);
@@ -111,7 +111,6 @@
             this.Name = "EditStatusRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменить статус";
-            this.Load += new System.EventHandler(this.EditStatusRequest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +123,6 @@
         private System.Windows.Forms.ComboBox StatusComboBox;
         private System.Windows.Forms.Button AddStatusButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CanceledButton;
     }
 }

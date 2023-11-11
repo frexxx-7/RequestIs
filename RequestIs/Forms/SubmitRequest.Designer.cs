@@ -34,7 +34,10 @@
             this.ContentTextBox = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CanceledButton = new System.Windows.Forms.Button();
+            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AddCategoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HeaderTextBox
@@ -85,7 +88,8 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(12, 427);
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddButton.Location = new System.Drawing.Point(12, 500);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(115, 36);
             this.AddButton.TabIndex = 6;
@@ -93,22 +97,54 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // CancelButton
+            // CanceledButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(742, 427);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(115, 36);
-            this.CancelButton.TabIndex = 7;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CanceledButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CanceledButton.Location = new System.Drawing.Point(742, 500);
+            this.CanceledButton.Name = "CanceledButton";
+            this.CanceledButton.Size = new System.Drawing.Size(115, 36);
+            this.CanceledButton.TabIndex = 7;
+            this.CanceledButton.Text = "Отмена";
+            this.CanceledButton.UseVisualStyleBackColor = true;
+            this.CanceledButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Location = new System.Drawing.Point(338, 398);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(337, 24);
+            this.CategoryComboBox.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(197, 402);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Категория:";
+            // 
+            // AddCategoryButton
+            // 
+            this.AddCategoryButton.Location = new System.Drawing.Point(201, 447);
+            this.AddCategoryButton.Name = "AddCategoryButton";
+            this.AddCategoryButton.Size = new System.Drawing.Size(168, 34);
+            this.AddCategoryButton.TabIndex = 10;
+            this.AddCategoryButton.Text = "Добавить категорию";
+            this.AddCategoryButton.UseVisualStyleBackColor = true;
+            this.AddCategoryButton.Click += new System.EventHandler(this.AddCategoryButton_Click);
             // 
             // SubmitRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 475);
-            this.Controls.Add(this.CancelButton);
+            this.ClientSize = new System.Drawing.Size(869, 548);
+            this.Controls.Add(this.AddCategoryButton);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.CategoryComboBox);
+            this.Controls.Add(this.CanceledButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ContentTextBox);
@@ -131,6 +167,9 @@
         private System.Windows.Forms.RichTextBox ContentTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CanceledButton;
+        private System.Windows.Forms.ComboBox CategoryComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button AddCategoryButton;
     }
 }

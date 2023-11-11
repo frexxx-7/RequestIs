@@ -44,6 +44,7 @@ namespace RequestIs.Forms
                 SurnameTextBox.Text = reader["surname"].ToString() != "" ? reader["surname"].ToString() : "Не указано";
                 NumberPhoneTextBox.Text = reader["numberPhone"].ToString() != "" ? reader["numberPhone"].ToString() : "Не указано";
                 NumberPassportTextBox.Text = reader["numberPassport"].ToString() != "" ? reader["numberPassport"].ToString() : "Не указано";
+                idUserInfo = reader["idUserInfo"].ToString() != "" ? reader["idUserInfo"].ToString() : null;
 
                 for (int i = 0; i < AddressComboBox.Items.Count; i++)
                 {
@@ -105,7 +106,8 @@ namespace RequestIs.Forms
             if (idUserInfo == null)
             {
                 MySqlCommand command = new MySqlCommand($"INSERT into userInfo (name, surname, patronymic, numberPhone, numberPassport, idAddress) values(@name, @surname, @patronymic, @numberPhone, @numberPassport, @idAddress);" +
-                $"Select LAST_INSERT_ID();", db.getConnection());
+                $"Update users set idUserInfo = (Select LAST_INSERT_ID()) " +
+                $"where users.id = {Main.idUser} ", db.getConnection());
                 command.Parameters.AddWithValue("@name", NameTextBox.Text);
                 command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
                 command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
@@ -117,42 +119,41 @@ namespace RequestIs.Forms
 
                 try
                 {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Информация обновлена");
-
+                    command.ExecuteScalar();
                 }
-                catch
+                catch (Exception exp)
                 {
-                    MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(exp.Message);
                 }
 
                 db.closeConnection();
             }
-            /*else
+            else
             {
-                MySqlCommand command = new MySqlCommand($"update users set login=@login, password=@password, position=@position where id = {idUserForEdit}", db.getConnection());
-                command.Parameters.AddWithValue("@login", LoginTextBox.Text);
-                command.Parameters.AddWithValue("@password", PasswordTextBox.Text);
-                command.Parameters.AddWithValue("@position", (PositionComboBox.SelectedItem as ComboBoxItem).Value);
+                MySqlCommand command = new MySqlCommand($"update userInfo set name = @name, surname = @surname, patronymic = @patronymic, numberPhone = @numberPhone, numberPassport = @numberPassport, idAddress = @idAddress " +
+                $"where userInfo.id = {idUserInfo} ", db.getConnection());
+                command.Parameters.AddWithValue("@name", NameTextBox.Text);
+                command.Parameters.AddWithValue("@surname", SurnameTextBox.Text);
+                command.Parameters.AddWithValue("@patronymic", PatronymicTextBox.Text);
+                command.Parameters.AddWithValue("@numberPhone", NumberPhoneTextBox.Text);
+                command.Parameters.AddWithValue("@numberPassport", NumberPassportTextBox.Text);
+                command.Parameters.AddWithValue("@idAddress", (AddressComboBox.SelectedItem as ComboBoxItem).Value);
 
                 db.openConnection();
 
                 try
                 {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Пользователь изменен");
-                    this.Close();
-
+                    command.ExecuteScalar();
                 }
-                catch
+                catch (Exception exp)
                 {
-                    MessageBox.Show("Ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(exp.Message);
                 }
 
                 db.closeConnection();
-            }*/
+            }
 
-            MySqlCommand commandUser = new MySqlCommand($"INSERT into user (login, password) values(@login, @password)", db.getConnection());
+            MySqlCommand commandUser = new MySqlCommand($"update users set login = @login, password = @password where id = {Main.idUser}", db.getConnection());
             commandUser.Parameters.AddWithValue("@login", LoginTextBox.Text);
             commandUser.Parameters.AddWithValue("@password", PasswordTextBox.Text);
 
@@ -162,8 +163,6 @@ namespace RequestIs.Forms
             {
                 commandUser.ExecuteNonQuery();
                 MessageBox.Show("Информация обновлена");
-                this.Close();
-
             }
             catch
             {

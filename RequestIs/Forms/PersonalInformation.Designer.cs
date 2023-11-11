@@ -40,7 +40,7 @@
             this.NumberPhoneTextBox = new System.Windows.Forms.TextBox();
             this.NumberPassportTextBox = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CanceledButton = new System.Windows.Forms.Button();
             this.AddressComboBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
@@ -155,15 +155,15 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // CancelButton
+            // CanceledButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(12, 12);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(119, 36);
-            this.CancelButton.TabIndex = 40;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CanceledButton.Location = new System.Drawing.Point(12, 12);
+            this.CanceledButton.Name = "CanceledButton";
+            this.CanceledButton.Size = new System.Drawing.Size(119, 36);
+            this.CanceledButton.TabIndex = 40;
+            this.CanceledButton.Text = "Отмена";
+            this.CanceledButton.UseVisualStyleBackColor = true;
+            this.CanceledButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // AddressComboBox
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.AddressComboBox);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CanceledButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.NumberPassportTextBox);
             this.Controls.Add(this.NumberPhoneTextBox);
@@ -265,7 +265,7 @@
         private System.Windows.Forms.TextBox NumberPhoneTextBox;
         private System.Windows.Forms.TextBox NumberPassportTextBox;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CanceledButton;
         private System.Windows.Forms.ComboBox AddressComboBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox LoginTextBox;

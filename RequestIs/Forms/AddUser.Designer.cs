@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.PositionComboBox = new System.Windows.Forms.ComboBox();
             this.AddPosition = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CanceledButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -112,15 +112,15 @@
             this.AddPosition.UseVisualStyleBackColor = true;
             this.AddPosition.Click += new System.EventHandler(this.AddPosition_Click);
             // 
-            // CancelButton
+            // CanceledButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(431, 459);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(122, 32);
-            this.CancelButton.TabIndex = 14;
-            this.CancelButton.Text = "Отмена";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CanceledButton.Location = new System.Drawing.Point(431, 459);
+            this.CanceledButton.Name = "CanceledButton";
+            this.CanceledButton.Size = new System.Drawing.Size(122, 32);
+            this.CanceledButton.TabIndex = 14;
+            this.CanceledButton.Text = "Отмена";
+            this.CanceledButton.UseVisualStyleBackColor = true;
+            this.CanceledButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // AddButton
             // 
@@ -137,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 503);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CanceledButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.AddPosition);
             this.Controls.Add(this.PositionComboBox);
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox PositionComboBox;
         private System.Windows.Forms.Button AddPosition;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CanceledButton;
         private System.Windows.Forms.Button AddButton;
     }
 }

@@ -21,6 +21,7 @@ namespace RequestIs.Forms
             InitializeComponent();
             this.idUser = idUser;
             this.idRequest = idRequest;
+            loadInfoCategory();
 
             if (idRequest != null)
             {
@@ -28,6 +29,26 @@ namespace RequestIs.Forms
                 AddButton.Text = "Изменить";
                 loadInfoForRequest();
             }
+        }
+        private void loadInfoCategory()
+        {
+            DB db = new DB();
+            string queryInfo = $"SELECT * FROM category";
+            MySqlCommand mySqlCommand = new MySqlCommand(queryInfo, db.getConnection());
+
+            db.openConnection();
+
+            MySqlDataReader reader = mySqlCommand.ExecuteReader();
+            while (reader.Read())
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Text = $" {reader[1]}";
+                item.Value = reader[0];
+                CategoryComboBox.Items.Add(item);
+            }
+            reader.Close();
+
+            db.closeConnection();
         }
         private void loadInfoForRequest()
         {
@@ -42,6 +63,17 @@ namespace RequestIs.Forms
             {
                 HeaderTextBox.Text = reader[1].ToString();
                 ContentTextBox.Text = reader[2].ToString();
+
+                for (int i = 0; i < CategoryComboBox.Items.Count; i++)
+                {
+                    if (reader["idCategory"].ToString() != "")
+                    {
+                        if (Convert.ToInt32((CategoryComboBox.Items[i] as ComboBoxItem).Value) == Convert.ToInt32(reader["idCategory"]))
+                        {
+                            CategoryComboBox.SelectedIndex = i;
+                        }
+                    }
+                }
             }
             reader.Close();
 
@@ -58,10 +90,11 @@ namespace RequestIs.Forms
             DB db = new DB();
             if (idRequest == null)
             {
-                MySqlCommand command = new MySqlCommand($"INSERT into requests (header, content, idUser) values(@header, @content, @idUser)", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"INSERT into requests (header, content, idUser, idCategory) values(@header, @content, @idUser, @idCategory)", db.getConnection());
                 command.Parameters.AddWithValue("@header", HeaderTextBox.Text);
                 command.Parameters.AddWithValue("@content", ContentTextBox.Text);
                 command.Parameters.AddWithValue("@idUser", idUser);
+                command.Parameters.AddWithValue("@idCategory", (CategoryComboBox.SelectedItem as ComboBoxItem).Value);
                 db.openConnection();
 
                 try
@@ -80,9 +113,10 @@ namespace RequestIs.Forms
             }
             else
             {
-                MySqlCommand command = new MySqlCommand($"update requests set header = @header, content = @content where id = {idRequest}", db.getConnection());
+                MySqlCommand command = new MySqlCommand($"update requests set header = @header, content = @content, idCategory = @idCategory where id = {idRequest}", db.getConnection());
                 command.Parameters.AddWithValue("@header", HeaderTextBox.Text);
                 command.Parameters.AddWithValue("@content", ContentTextBox.Text);
+                command.Parameters.AddWithValue("@idCategory", (CategoryComboBox.SelectedItem as ComboBoxItem).Value);
 
                 db.openConnection();
 
@@ -100,6 +134,11 @@ namespace RequestIs.Forms
 
                 db.closeConnection();
             }
+        }
+
+        private void AddCategoryButton_Click(object sender, EventArgs e)
+        {
+            new AddCategory().Show();
         }
     }
 }

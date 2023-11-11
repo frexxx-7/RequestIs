@@ -105,10 +105,5 @@ namespace RequestIs.Forms
 
             db.closeConnection();
         }
-
-        private void EditStatusRequest_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

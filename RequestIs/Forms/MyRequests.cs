@@ -45,7 +45,9 @@ namespace RequestIs.Forms
 
             RequestsDataGridView.Rows.Clear();
 
-            string searchString = $"select * from requests where concat (header, content)  like '%{SearchTextBox.Text}%' and idUser = {idUser}";
+            string searchString = $"selectselect requests.id, requests.header, requests.content, requests.idUser, category.name from requests " +
+                                $"join category on category.id = request.idCatgory " +
+                                $"where concat (header, content)  like '%{SearchTextBox.Text}%' and idUser = {idUser}";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(searchString, db.getConnection()))
@@ -75,7 +77,9 @@ namespace RequestIs.Forms
 
             RequestsDataGridView.Rows.Clear();
 
-            string query = $"select * from requests where idUser = {idUser}";
+            string query = $"select requests.id, requests.header, requests.content, requests.idUser, category.name from requests " +
+                $"join category on category.id = requests.idCategory " +
+                $"where idUser = {idUser}";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(query, db.getConnection()))

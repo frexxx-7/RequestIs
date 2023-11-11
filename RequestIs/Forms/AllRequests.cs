@@ -24,10 +24,13 @@ namespace RequestIs.Forms
 
             RequestsDataGridView.Rows.Clear();
 
-            string query = $"select requests.id, requests.header, requests.content, users.login, statusrequest.name from history " +
-                $"join statusrequest on statusrequest.id = history.idStatusRequest " +
-                $"join requests on requests.id = history.idRequest " +
-                $"join users on requests.idUser = users.id";
+            string query = "select requests.id, requests.header, requests.content, category.name, users.login, statusrequest.name from requests " +
+                 "left join history on history.idRequest = requests.id " +
+                 "left join statusrequest on history.idStatusRequest = statusrequest.id " +
+                 "left join category on category.id = requests.idCategory " +
+                 "join users on requests.idUser = users.id " +
+                 "GROUP by requests.id ";
+
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(query, db.getConnection()))
@@ -94,11 +97,13 @@ namespace RequestIs.Forms
 
             RequestsDataGridView.Rows.Clear();
 
-            string searchString = $"select requests.id, requests.header, requests.content, users.login, statusrequest.name from history " +
-                $"join statusrequest on statusrequest.id = history.idStatusRequest " +
-                $"join requests on requests.id = history.idRequest " +
-                $"join users on requests.idUser = users.id " +
-                $"where concat (requests.header, requests.content, users.login, statusrequest.name)  like '%{SearchTextBox.Text}%'";
+            string searchString = "select requests.id, requests.header, requests.content, category.name, users.login, statusrequest.name from requests " +
+                 "left join history on history.idRequest = requests.id " +
+                 "left join statusrequest on history.idStatusRequest = statusrequest.id " +
+                 "left join category on category.id = requests.idCategory " +
+                 "join users on requests.idUser = users.id " +
+                  $"where concat (requests.header, requests.content, category.name, users.login, statusrequest.name)  like '%{SearchTextBox.Text}% '" +
+                 "GROUP by requests.id ";
 
             db.openConnection();
             using (MySqlCommand mySqlCommand = new MySqlCommand(searchString, db.getConnection()))

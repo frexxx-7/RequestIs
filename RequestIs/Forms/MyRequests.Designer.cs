@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RequestsDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Header = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUserColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BackButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
@@ -43,6 +39,11 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ShowButton = new System.Windows.Forms.Button();
+            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Header = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUserColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.RequestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@
             this.idDocrors,
             this.Header,
             this.Content,
-            this.idUserColumn});
+            this.idUserColumn,
+            this.Category});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -79,32 +81,6 @@
             this.RequestsDataGridView.RowTemplate.Height = 24;
             this.RequestsDataGridView.Size = new System.Drawing.Size(826, 354);
             this.RequestsDataGridView.TabIndex = 1;
-            // 
-            // idDocrors
-            // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            // 
-            // Header
-            // 
-            this.Header.HeaderText = "Заголовок";
-            this.Header.MinimumWidth = 6;
-            this.Header.Name = "Header";
-            // 
-            // Content
-            // 
-            this.Content.HeaderText = "Текст заявки";
-            this.Content.MinimumWidth = 6;
-            this.Content.Name = "Content";
-            // 
-            // idUserColumn
-            // 
-            this.idUserColumn.HeaderText = "idUser";
-            this.idUserColumn.MinimumWidth = 6;
-            this.idUserColumn.Name = "idUserColumn";
-            this.idUserColumn.Visible = false;
             // 
             // BackButton
             // 
@@ -179,6 +155,38 @@
             this.ShowButton.UseVisualStyleBackColor = true;
             this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            // 
+            // Header
+            // 
+            this.Header.HeaderText = "Заголовок";
+            this.Header.MinimumWidth = 6;
+            this.Header.Name = "Header";
+            // 
+            // Content
+            // 
+            this.Content.HeaderText = "Текст заявки";
+            this.Content.MinimumWidth = 6;
+            this.Content.Name = "Content";
+            // 
+            // idUserColumn
+            // 
+            this.idUserColumn.HeaderText = "idUser";
+            this.idUserColumn.MinimumWidth = 6;
+            this.idUserColumn.Name = "idUserColumn";
+            this.idUserColumn.Visible = false;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
+            // 
             // MyRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,15 +216,16 @@
 
         private System.Windows.Forms.DataGridView RequestsDataGridView;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDocrors;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Header;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Content;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUserColumn;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button ShowButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDocrors;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Header;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Content;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUserColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
     }
 }

@@ -59,6 +59,12 @@
     <Compile Include="Forms\AddAddress.Designer.cs">
       <DependentUpon>AddAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddPosition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddAddress.resx">
       <DependentUpon>AddAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPosition.resx">
       <DependentUpon>AddPosition.cs</DependentUpon>
