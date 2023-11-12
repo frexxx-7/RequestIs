@@ -44,6 +44,7 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.OtputButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,11 +190,23 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Пользователи";
             // 
+            // OtputButton
+            // 
+            this.OtputButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OtputButton.Location = new System.Drawing.Point(702, 12);
+            this.OtputButton.Name = "OtputButton";
+            this.OtputButton.Size = new System.Drawing.Size(122, 35);
+            this.OtputButton.TabIndex = 23;
+            this.OtputButton.Text = "Отчет";
+            this.OtputButton.UseVisualStyleBackColor = true;
+            this.OtputButton.Click += new System.EventHandler(this.OtputButton_Click);
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 519);
+            this.Controls.Add(this.OtputButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.SearchTextBox);
@@ -230,5 +243,6 @@
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button OtputButton;
     }
 }

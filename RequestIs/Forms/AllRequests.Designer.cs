@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.RequestsDataGridView = new System.Windows.Forms.DataGridView();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.EditStatus = new System.Windows.Forms.Button();
-            this.ShowButton = new System.Windows.Forms.Button();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeaderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.EditStatus = new System.Windows.Forms.Button();
+            this.ShowButton = new System.Windows.Forms.Button();
+            this.OtputButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RequestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,8 +86,8 @@
             // 
             this.RequestsDataGridView.AllowUserToAddRows = false;
             this.RequestsDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RequestsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RequestsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.RequestsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -100,22 +101,59 @@
             this.Category,
             this.User,
             this.StatusRequest});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RequestsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RequestsDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             this.RequestsDataGridView.Location = new System.Drawing.Point(12, 83);
             this.RequestsDataGridView.Name = "RequestsDataGridView";
             this.RequestsDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RequestsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RequestsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.RequestsDataGridView.RowTemplate.Height = 24;
             this.RequestsDataGridView.Size = new System.Drawing.Size(911, 353);
             this.RequestsDataGridView.TabIndex = 14;
+            // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            // 
+            // HeaderColumn
+            // 
+            this.HeaderColumn.HeaderText = "Заголовок";
+            this.HeaderColumn.MinimumWidth = 6;
+            this.HeaderColumn.Name = "HeaderColumn";
+            // 
+            // ContentColumn
+            // 
+            this.ContentColumn.HeaderText = "Текст";
+            this.ContentColumn.MinimumWidth = 6;
+            this.ContentColumn.Name = "ContentColumn";
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
+            // 
+            // User
+            // 
+            this.User.HeaderText = "Пользователь";
+            this.User.MinimumWidth = 6;
+            this.User.Name = "User";
+            // 
+            // StatusRequest
+            // 
+            this.StatusRequest.HeaderText = "Статус";
+            this.StatusRequest.MinimumWidth = 6;
+            this.StatusRequest.Name = "StatusRequest";
             // 
             // SearchTextBox
             // 
@@ -169,48 +207,23 @@
             this.ShowButton.UseVisualStyleBackColor = true;
             this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
-            // idDocrors
+            // OtputButton
             // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            // 
-            // HeaderColumn
-            // 
-            this.HeaderColumn.HeaderText = "Заголовок";
-            this.HeaderColumn.MinimumWidth = 6;
-            this.HeaderColumn.Name = "HeaderColumn";
-            // 
-            // ContentColumn
-            // 
-            this.ContentColumn.HeaderText = "Текст";
-            this.ContentColumn.MinimumWidth = 6;
-            this.ContentColumn.Name = "ContentColumn";
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Категория";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            // 
-            // User
-            // 
-            this.User.HeaderText = "Пользователь";
-            this.User.MinimumWidth = 6;
-            this.User.Name = "User";
-            // 
-            // StatusRequest
-            // 
-            this.StatusRequest.HeaderText = "Статус";
-            this.StatusRequest.MinimumWidth = 6;
-            this.StatusRequest.Name = "StatusRequest";
+            this.OtputButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OtputButton.Location = new System.Drawing.Point(715, 20);
+            this.OtputButton.Name = "OtputButton";
+            this.OtputButton.Size = new System.Drawing.Size(122, 35);
+            this.OtputButton.TabIndex = 22;
+            this.OtputButton.Text = "Отчет";
+            this.OtputButton.UseVisualStyleBackColor = true;
+            this.OtputButton.Click += new System.EventHandler(this.OtputButton_Click);
             // 
             // AllRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(987, 535);
+            this.Controls.Add(this.OtputButton);
             this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.EditStatus);
             this.Controls.Add(this.SearchTextBox);
@@ -249,5 +262,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusRequest;
+        private System.Windows.Forms.Button OtputButton;
     }
 }

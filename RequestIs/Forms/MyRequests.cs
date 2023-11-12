@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace RequestIs.Forms
 {
@@ -78,7 +79,7 @@ namespace RequestIs.Forms
             RequestsDataGridView.Rows.Clear();
 
             string query = $"select requests.id, requests.header, requests.content, requests.idUser, category.name from requests " +
-                $"join category on category.id = requests.idCategory " +
+                $"left join category on category.id = requests.idCategory " +
                 $"where idUser = {idUser}";
 
             db.openConnection();
@@ -138,6 +139,40 @@ namespace RequestIs.Forms
         {
             new ShowRequest(RequestsDataGridView[0, RequestsDataGridView.SelectedCells[0].RowIndex].Value.ToString(), this).Show();
             this.Hide();
+        }
+
+        private void OtputButton_Click(object sender, EventArgs e)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            Excel.Worksheet worksheet = workbook.ActiveSheet;
+            for (int j = 0; j < RequestsDataGridView.Columns.Count; j++)
+            {
+                if (RequestsDataGridView.Columns[j].Visible)
+                {
+                    worksheet.Cells[1, j] = RequestsDataGridView.Columns[j].HeaderText;
+                }
+            }
+            for (int i = 0; i < RequestsDataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < RequestsDataGridView.Columns.Count; j++)
+                {
+                    if (RequestsDataGridView.Columns[j].Visible)
+                    {
+                        worksheet.Cells[i+2, j] = RequestsDataGridView.Rows[i].Cells[j].Value;
+                    }
+                }
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel File|*.xlsx";
+            saveFileDialog1.Title = "Сохранить Excel файл";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                workbook.SaveAs(saveFileDialog1.FileName);
+            }
+            workbook.Close();
+            excelApp.Quit();
         }
     }
 }

@@ -32,6 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RequestsDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Header = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUserColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BackButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
@@ -39,11 +44,7 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ShowButton = new System.Windows.Forms.Button();
-            this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Header = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Content = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUserColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OtputButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.RequestsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +82,38 @@
             this.RequestsDataGridView.RowTemplate.Height = 24;
             this.RequestsDataGridView.Size = new System.Drawing.Size(826, 354);
             this.RequestsDataGridView.TabIndex = 1;
+            // 
+            // idDocrors
+            // 
+            this.idDocrors.HeaderText = "id";
+            this.idDocrors.MinimumWidth = 6;
+            this.idDocrors.Name = "idDocrors";
+            this.idDocrors.Visible = false;
+            // 
+            // Header
+            // 
+            this.Header.HeaderText = "Заголовок";
+            this.Header.MinimumWidth = 6;
+            this.Header.Name = "Header";
+            // 
+            // Content
+            // 
+            this.Content.HeaderText = "Текст заявки";
+            this.Content.MinimumWidth = 6;
+            this.Content.Name = "Content";
+            // 
+            // idUserColumn
+            // 
+            this.idUserColumn.HeaderText = "idUser";
+            this.idUserColumn.MinimumWidth = 6;
+            this.idUserColumn.Name = "idUserColumn";
+            this.idUserColumn.Visible = false;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
             // 
             // BackButton
             // 
@@ -155,43 +188,23 @@
             this.ShowButton.UseVisualStyleBackColor = true;
             this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
-            // idDocrors
+            // OtputButton
             // 
-            this.idDocrors.HeaderText = "id";
-            this.idDocrors.MinimumWidth = 6;
-            this.idDocrors.Name = "idDocrors";
-            this.idDocrors.Visible = false;
-            // 
-            // Header
-            // 
-            this.Header.HeaderText = "Заголовок";
-            this.Header.MinimumWidth = 6;
-            this.Header.Name = "Header";
-            // 
-            // Content
-            // 
-            this.Content.HeaderText = "Текст заявки";
-            this.Content.MinimumWidth = 6;
-            this.Content.Name = "Content";
-            // 
-            // idUserColumn
-            // 
-            this.idUserColumn.HeaderText = "idUser";
-            this.idUserColumn.MinimumWidth = 6;
-            this.idUserColumn.Name = "idUserColumn";
-            this.idUserColumn.Visible = false;
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Категория";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
+            this.OtputButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OtputButton.Location = new System.Drawing.Point(685, 13);
+            this.OtputButton.Name = "OtputButton";
+            this.OtputButton.Size = new System.Drawing.Size(122, 35);
+            this.OtputButton.TabIndex = 23;
+            this.OtputButton.Text = "Отчет";
+            this.OtputButton.UseVisualStyleBackColor = true;
+            this.OtputButton.Click += new System.EventHandler(this.OtputButton_Click);
             // 
             // MyRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 511);
+            this.Controls.Add(this.OtputButton);
             this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.UpdateButton);
@@ -227,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Content;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUserColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.Button OtputButton;
     }
 }

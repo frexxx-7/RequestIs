@@ -33,6 +33,7 @@ namespace RequestIs.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             new MyRequests(idUser).Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

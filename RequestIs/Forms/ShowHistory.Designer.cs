@@ -32,13 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.DoctorsDataGridView = new System.Windows.Forms.DataGridView();
+            this.HistoryDataGridView = new System.Windows.Forms.DataGridView();
             this.idDocrors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeaderRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContentRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BackButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DoctorsDataGridView)).BeginInit();
+            this.OtputButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.HistoryDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,19 +53,19 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "История";
             // 
-            // DoctorsDataGridView
+            // HistoryDataGridView
             // 
-            this.DoctorsDataGridView.AllowUserToAddRows = false;
-            this.DoctorsDataGridView.AllowUserToDeleteRows = false;
+            this.HistoryDataGridView.AllowUserToAddRows = false;
+            this.HistoryDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoctorsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DoctorsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.HistoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.HistoryDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DoctorsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DoctorsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DoctorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DoctorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.HistoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.HistoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.HistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HistoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDocrors,
             this.HeaderRequest,
             this.ContentRequest,
@@ -76,15 +77,15 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoctorsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DoctorsDataGridView.Location = new System.Drawing.Point(27, 76);
-            this.DoctorsDataGridView.Name = "DoctorsDataGridView";
-            this.DoctorsDataGridView.RowHeadersWidth = 51;
+            this.HistoryDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.HistoryDataGridView.Location = new System.Drawing.Point(27, 76);
+            this.HistoryDataGridView.Name = "HistoryDataGridView";
+            this.HistoryDataGridView.RowHeadersWidth = 51;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoctorsDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.DoctorsDataGridView.RowTemplate.Height = 24;
-            this.DoctorsDataGridView.Size = new System.Drawing.Size(708, 392);
-            this.DoctorsDataGridView.TabIndex = 4;
+            this.HistoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.HistoryDataGridView.RowTemplate.Height = 24;
+            this.HistoryDataGridView.Size = new System.Drawing.Size(708, 392);
+            this.HistoryDataGridView.TabIndex = 4;
             // 
             // idDocrors
             // 
@@ -121,20 +122,33 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // OtputButton
+            // 
+            this.OtputButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OtputButton.Location = new System.Drawing.Point(637, 16);
+            this.OtputButton.Name = "OtputButton";
+            this.OtputButton.Size = new System.Drawing.Size(122, 35);
+            this.OtputButton.TabIndex = 23;
+            this.OtputButton.Text = "Отчет";
+            this.OtputButton.UseVisualStyleBackColor = true;
+            this.OtputButton.Click += new System.EventHandler(this.OtputButton_Click);
+            // 
             // ShowHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 518);
+            this.Controls.Add(this.OtputButton);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.DoctorsDataGridView);
+            this.Controls.Add(this.HistoryDataGridView);
             this.Controls.Add(this.label1);
             this.Name = "ShowHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "История";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShowHistory_FormClosed);
             this.Load += new System.EventHandler(this.ShowHistory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DoctorsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HistoryDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,11 +157,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DoctorsDataGridView;
+        private System.Windows.Forms.DataGridView HistoryDataGridView;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDocrors;
         private System.Windows.Forms.DataGridViewTextBoxColumn HeaderRequest;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContentRequest;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusRequest;
+        private System.Windows.Forms.Button OtputButton;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace RequestIs.Forms
 {
@@ -29,7 +30,7 @@ namespace RequestIs.Forms
         {
             DB db = new DB();
 
-            DoctorsDataGridView.Rows.Clear();
+            HistoryDataGridView.Rows.Clear();
 
             string searchString = $"select requests.id, requests.header, requests.content, statusrequest.name from history " +
                 $"join requests on requests.id = history.idRequest " +
@@ -52,9 +53,48 @@ namespace RequestIs.Forms
                 }
                 reader.Close();
                 foreach (string[] s in dataDB)
-                    DoctorsDataGridView.Rows.Add(s);
+                    HistoryDataGridView.Rows.Add(s);
             }
             db.closeConnection();
+        }
+
+        private void OtputButton_Click(object sender, EventArgs e)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            Excel.Worksheet worksheet = workbook.ActiveSheet;
+            for (int j = 0; j < HistoryDataGridView.Columns.Count; j++)
+            {
+                if (HistoryDataGridView.Columns[j].Visible)
+                {
+                    worksheet.Cells[1, j] = HistoryDataGridView.Columns[j].HeaderText;
+                }
+            }
+            for (int i = 0; i < HistoryDataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < HistoryDataGridView.Columns.Count; j++)
+                {
+                    if (HistoryDataGridView.Columns[j].Visible)
+                    {
+                        worksheet.Cells[i + 2, j] = HistoryDataGridView.Rows[i].Cells[j].Value;
+                    }
+                }
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel File|*.xlsx";
+            saveFileDialog1.Title = "Сохранить Excel файл";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                workbook.SaveAs(saveFileDialog1.FileName);
+            }
+            workbook.Close();
+            excelApp.Quit();
+        }
+
+        private void ShowHistory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
