@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 11 2023 г., 15:35
+-- Время создания: Ноя 13 2023 г., 10:06
 -- Версия сервера: 5.6.51
 -- Версия PHP: 7.2.34
 
@@ -40,8 +40,11 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `house`, `street`, `city`, `country`) VALUES
-(1, 'asd', 'asd', 'asd', 'asd'),
-(2, '2', 'qwe', 'qwe', 'qwe');
+(1, '10', 'Пушкина', 'Воложин', 'Беларусь'),
+(2, '2', 'Ленина', 'Брест', 'Беларусь'),
+(3, '3', 'Гагарина', 'Минск', 'Беларусь'),
+(4, '4', 'Революции', 'Могилев3', 'Беларусь'),
+(5, '87', 'Свободы', 'Молодечно', 'Беларусь');
 
 -- --------------------------------------------------------
 
@@ -59,7 +62,11 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'asd');
+(1, 'Технические проблемы'),
+(2, 'Финансовые вопросы'),
+(3, 'Запрос на информацию'),
+(4, 'Жалобы и предложения'),
+(5, 'Установка и настройка');
 
 -- --------------------------------------------------------
 
@@ -98,7 +105,10 @@ CREATE TABLE `positions` (
 
 INSERT INTO `positions` (`id`, `name`) VALUES
 (1, 'Админ'),
-(2, 'Пользователь');
+(2, 'Пользователь'),
+(3, 'Менеджер'),
+(4, 'Гость'),
+(5, 'Суперпользователь');
 
 -- --------------------------------------------------------
 
@@ -119,10 +129,11 @@ CREATE TABLE `requests` (
 --
 
 INSERT INTO `requests` (`id`, `header`, `content`, `idUser`, `idCategory`) VALUES
-(1, 'qwe', 'qwerr', 1, NULL),
-(2, 'asdasd', 'asdasd', 3, 1),
-(3, 'asdasd', 'asdasda', 3, NULL),
-(4, 'asdasdasd', 'asdasdasd', 3, 1);
+(1, ' Проблема с интернетом', 'У меня нет подключения к интернету уже два дня', 3, 1),
+(2, 'Запрос на выписку счета', 'Я бы хотел получить выписку по моему текущему счету', 5, 2),
+(3, 'Запрос на информацию о продукте', 'Я хотел бы узнать больше о вашем новом продукте', 7, 3),
+(4, 'Жалоба на качество услуг', 'Я не доволен качеством предоставляемых услуг, Категория: Жалобы и предложения', 5, 4),
+(5, 'Запрос на помощь с установкой', 'Я не могу установить вашу программу на свой компьютер', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -140,8 +151,11 @@ CREATE TABLE `statusrequest` (
 --
 
 INSERT INTO `statusrequest` (`id`, `name`) VALUES
-(1, 'wqe'),
-(2, 'rty');
+(1, 'В ожидании'),
+(2, 'В обработке'),
+(3, 'Завершена'),
+(4, 'Отклонена'),
+(5, 'Приостановлена');
 
 -- --------------------------------------------------------
 
@@ -164,12 +178,11 @@ CREATE TABLE `userInfo` (
 --
 
 INSERT INTO `userInfo` (`id`, `name`, `patronymic`, `surname`, `idAddress`, `numberPhone`, `numberPassport`) VALUES
-(1, 'qwe', 'qwe', 'qwe', 2, 'Не указано', 'Не указано'),
-(2, 'Не указано', 'Не указано', 'Не указано', 2, 'Не указано', 'Не указано'),
-(3, 'Не указано', 'Не указано', 'Не указано', 2, 'Не указано', 'Не указано'),
-(4, 'Не указано', 'Не указано', 'Не указано', 2, 'Не указано', 'Не указано'),
-(5, 'asd', 'asd', 'asd', 1, 'Не указано', 'Не указано'),
-(6, 'qwe', 'qwe', 'qwe', 2, 'qwe', 'qwe');
+(1, 'Иван ', 'Иванович', 'Иванов ', 2, '1234567890', '123456789'),
+(2, 'Петр ', 'Петрович', 'Петров ', 1, '9876543210', '987654321'),
+(3, 'Анна ', 'Ивановна', 'Сидорова ', 3, '5678901234', '567890123'),
+(4, 'Николай ', 'Владимирович', 'Козлов ', 4, '4321098765', '432109876'),
+(5, 'Екатерина ', 'Сергеевна', 'Смирнова ', 5, '8901234567', '890123456');
 
 -- --------------------------------------------------------
 
@@ -190,9 +203,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `position`, `idUserInfo`) VALUES
-(1, 'admin', 'admin', '2', NULL),
-(3, 'asd', 'asd', '2', 5),
-(4, 'qwe', 'qwe', '2', 6);
+(1, 'admin', 'admin', '2', 1),
+(3, 'user1', 'password1', '2', 5),
+(5, 'user3', 'password3', '2', 4),
+(6, 'user4', 'password4', '2', 3),
+(7, 'user5', 'password5', '2', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -260,13 +275,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `history`
@@ -278,19 +293,19 @@ ALTER TABLE `history`
 -- AUTO_INCREMENT для таблицы `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `statusrequest`
 --
 ALTER TABLE `statusrequest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `userInfo`
@@ -302,7 +317,7 @@ ALTER TABLE `userInfo`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
